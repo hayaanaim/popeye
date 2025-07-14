@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POPEYE — Japan Edition - page2</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="webd/style.css"/>
+
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+	  
+    body {
+      font-family: 'Noto Sans JP', 'Space Grotesk', sans-serif;
+      background: #C5C676;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-banner {
+      background-color: #C5C676;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    .logo-banner img {
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+    .nav {
+      background-color: #C5C676;
+      padding: 0.8rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #FCFAF6;
+      position: relative;
+    }
+
+    .nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: -2px;
+      left: 0;
+      background-color: #000;
+      transition: width 0.3s;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .sticky-text-section {
+      height: 250vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sticky-container {
+      position: sticky;
+      top: 25%;
+      text-align: center;
+      z-index: 5;
+    }
+
+    .sticky-heading {
+      font-size: 4rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      background-color: #C5C676;
+      transition: opacity 0.4s ease;
+    }
+
+    .hero {
+      position: relative;
+      margin-bottom: 3rem;
+    }
+
+    .hero img {
+      height: 80vh;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 1rem 1.5rem;
+      max-width: 400px;
+      border-radius: 4px;
+    }
+
+    .hero-text h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+	  
+	  .intro-columns {
+  padding: 4rem 0;
+  background-color: #FCFAF6;
+}
+
+.intro-text {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.intro-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.intro-img img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+.article-text {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+  line-height: 1.8;
+}
+
+
+.articles h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+
+.articles .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+
+/* Make article text centered and readable */
+.article-text {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+  line-height: 1.8;
+}
+
+/* Center-align and constrain the heading under LATEST STORIES */
+.articles h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Uniform card layout for Latest Stories */
+.articles .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+
+.articles .card img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.articles .card h3 {
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.articles .card p.date {
+  font-size: 0.8rem;
+  color: #9E3620;
+  margin: 0;
+}
+
+
+  .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+}
+
+
+ .card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+
+    .date {
+      font-size: 0.8rem;
+      color: #9E3620;
+    }
+
+    .news-section {
+      padding: 3rem 0;
+      background-color: #f9f9f9;
+    }
+
+    .badge-purple {
+      background-color: #9C27B0;
+      color: #fff;
+      font-size: 0.7rem;
+      margin-right: 0.5rem;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .hot-topic {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+	  
+	  .hot-topic {
+  background: #fff;
+  border-left: 4px solid #FF5733;
+  padding: 1rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.magazine-section a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.magazine-section .badge {
+  font-size: 0.7rem;
+  margin-right: 0.3rem;
+}
+
+.magazine-section ul li a {
+  font-size: 0.9rem;
+  color: #d32f2f;
+}
+
+.magazine-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+
+    .news-section ul {
+      padding-left: 1rem;
+    }
+
+    .news-section ul li {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-section ul li a {
+      color: #d32f2f;
+      text-decoration: none;
+    }
+
+    .feature {
+      margin: 4rem 0;
+      position: relative;
+    }
+
+    .feature img {
+      height: 60vh;
+      object-fit: cover;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      color: #FF6400;
+      padding: 0.8rem 1.2rem;
+      font-weight: 600;
+    }
+
+ .shop {
+  padding: 3rem 0;
+  background-color: #FCFAF6;
+  text-align: center;
+}
+
+.shop h2 {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.shop-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.shop-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop-card img {
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.shop-info {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.shop-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.shop-card:hover {
+  transform: translateY(-5px);
+}
+
+    .footer {
+      padding: 2rem;
+      text-align: center;
+      background-color: #DFE09C;
+    }
+
+    .footer-links a {
+      margin: 0 0.5rem;
+      color: #FF6400;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-heading {
+        font-size: 2.5rem;
+      }
+
+      .hero-text {
+        left: 1rem;
+        right: 1rem;
+        max-width: none;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+		@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.2rem;
+  }
+			.article-text {
+  padding: 0 1rem;
+}
+
+  .sticky-heading {
+    font-size: 2rem;
+  }
+}
+
+    }
+  </style>
+</head>
+<body>
+
+	 <div class="video">
+    <video autoplay loop muted playsinline>
+      <source src="videos/gif.mp4" type="video/mp4" />
+    </video>
+  </div>
+  
+  <div class="video-background">
+    <video autoplay loop muted playsinline>
+      <source src="videos/gif.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  
+  <header>
+    <section class="logo-banner">
+      <img  src="images/logo.png" alt="BAMUN Magazine Logo">
+    </section>
+
+   <nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="page3.html">Journal</a>
+  <a href="#">Shop</a>
+  <a href="#">Contact</a>
+
+</nav>
+	  <div class="search-container">
+  <div class="container">
+    <input type="text" id="searchInput" class="form-control" placeholder="Search articles...">
+  </div>
+</div>
+</header>
+ 
+<section class="article-text intro-text">
+  <p>Every morning, beneath the bustling cities of Tokyo and Osaka, Japan’s subway platforms become impromptu runways. In a society often known for uniformity and modesty, subway fashion tells a different story — one of quiet self-expression, cultural layering, and the coexistence of tradition with trend.
+
+</p>
+</section>
+
+
+<section class="sticky-text-section">
+  <div class="sticky-container">
+    <h1 class="sticky-heading">ISSUE 07 — Inside Japan’s Subway Style</h1>
+  </div>
+</section>
+
+
+<section class="hero">
+    <img src="images/subway.jpg" alt="Street photography of Tokyo at night">
+  </section>
+	
+	
+<section class="article-text outro-text">
+  <p>Unlike high fashion that's born for the stage, subway fashion is deeply functional yet deliberately curated. Japan’s urban population spends hours commuting daily, which has made style in transit an essential part of everyday identity. Whether it's a crisp school uniform altered at the hem, a loose silhouette inspired by Harajuku, or the latest Comme des Garçons drop, subway fashion reflects a life in motion.
+
+Many Japanese commuters blend streetwear with workwear — balancing self-expression with societal expectations. A young woman might pair an oversized thrifted blazer with patent loafers and lace socks. A salaryman might subtly defy the monotony of black suits with a pair of Nike Jordans. These contrasts — conservative cuts, bold accessories, neutral palettes disrupted by electric color — are what define the genre.</p>
+
+  <p>The Subway as a Democratic Space
+Unlike elite fashion spheres, the subway is for everyone. It democratizes style — offering a glimpse into how people across age, gender, and background dress when they’re not “performing” for formal events. You’ll see teenagers in DIY kei-inspired outfits standing next to elderly women in kimonos with Repetto ballet flats. Here, subcultures mingle effortlessly: Lolita fashion, normcore, techwear, and vintage Americana all share the same space.
+
+In Tokyo particularly, stations like Shibuya, Harajuku, and Ikebukuro act as both fashion zones and social terrains. While Harajuku remains a hub of flamboyance, subway fashion leans toward the art of suggestion rather than spectacle — favoring detail, layering, and mood.</p>
+
+  <p>Microtrends Born Underground
+Japan's fast-paced subway life gives birth to microtrends. One week, everyone seems to carry leather crescent-shaped bags. The next, it’s soft bucket hats and Mary Janes with tabi socks. Brands like Uniqlo and Muji offer minimalist bases, which are then transformed through accessories, thrift-store finds, and designer pieces.
+
+Recently, there's been a rise in “new vintage” subway looks — retro 80s silhouettes, bomber jackets, acid-wash denim, and sportswear brands from Europe — mixed with local labels like Beams, United Arrows, and Issey Miyake’s Pleats Please. The common thread? Individuality through thoughtful contrast.
+
+</p>
+
+  <p>Style as Silence and Rebellion
+In a country where conformity is often social currency, style in transit becomes a quiet rebellion. People use clothing to carve space for themselves in the crowd — not by shouting, but through refined defiance. A carefully mismatched earring. A mohair cardigan over a utilitarian jumpsuit. An androgynous haircut softened with lace.
+
+Subway fashion is also gender-fluid, with many younger Japanese dressing androgynously, challenging rigid masculine/feminine binaries. This subtle shift is often most visible underground, where gaze and self-presentation move fluidly between stations.</p>
+
+  <p>This photographic archive proves that Japanese subway style isn’t just about fashion — it’s about attitude, pace, and presence.</p>
+</section>
+
+
+  
+<section class="articles">
+  <div class="container">
+    <h2>LATEST STORIES</h2>
+    <div class="grid">
+      <a href="page2.html" class="card" style="text-decoration: none; color: inherit;">
+        <img src="images/subway.jpg" alt="Tokyo subway fashion">
+        <h3>Inside Japan’s Subway Style</h3>
+        <p class="date">July 2025</p>
+      </a>
+      <div class="card">
+        <img src="images/kyoto.jpg" alt="Kyoto vintage stores">
+        <h3>Kyoto’s Vintage Scene</h3>
+        <p class="date">June 2025</p>
+      </div>
+      <div class="card">
+        <img src="images/prints.jpg" alt="Quiet room design with bold prints">
+        <h3>Quiet Rooms and Loud Prints</h3>
+        <p class="date">May 2025</p>
+      </div>
+      <div class="card">
+        <img src="images/Shimokitazawa.jpg" alt="Weekends in Shimokitazawa">
+        <h3>Weekends in Shimokitazawa</h3>
+        <p class="date">May 2025</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <section class="feature">
+    <img src="images/vf2.jpg" alt="Polaroid view of Tokyo">
+    <div class="caption">Tokyo Through a Polaroid</div>
+</section>
+
+  
+  <section class="shop">
+  <div class="container">
+    <h2>Shop the Drop</h2>
+    <div class="grid shop-grid">
+      <div class="card shop-card">
+        <img src="images/tote.jpg" alt="BAMUN Issue 07 Tote">
+        <div class="shop-info">
+          <p>Issue 07 Tote</p>
+        </div>
+      </div>
+      <div class="card shop-card">
+        <img src="images/tee.jpg" alt="Soft graphic tee">
+        <div class="shop-info">
+          <p>Soft Tee</p>
+        </div>
+      </div>
+      <div class="card shop-card">
+        <img src="images/zine1.jpg" alt="Print zine cover">
+        <div class="shop-info">
+          <p>Print Zine</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<footer class="footer">
+    <p>&copy; 2025 POPEYE Magazine. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">Privacy</a>
+      <a href="#">Credits</a>
+    </div>
+  </footer>
+
+ <script>
+  document.getElementById("searchInput").addEventListener("keyup", function() {
+    const input = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".articles .card");
+
+    cards.forEach(card => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      card.style.display = title.includes(input) ? "block" : "none";
+    });
+  });
+</script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    const heading = document.querySelector('.sticky-heading');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const fadeStart = 300;
+      const fadeEnd = 800;
+      const opacity = 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
+      heading.style.opacity = Math.max(opacity, 0);
+    });
+  </script>
+
+</body>
+</html>
